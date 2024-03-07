@@ -1,0 +1,1 @@
+print(input("Nombre principal: ") + "\n" + input("Nombre final: "))
