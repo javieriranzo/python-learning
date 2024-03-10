@@ -38,5 +38,3 @@ print(mi_lista3);
 # Revertir el orden. 
 mi_lista3.reverse();
 print(mi_lista3); 
-
-
