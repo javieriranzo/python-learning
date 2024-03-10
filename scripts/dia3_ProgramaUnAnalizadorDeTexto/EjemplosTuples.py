@@ -40,11 +40,11 @@ print(len(mi_tuple4));
 mi_tuple5 = (
     1, 2, 3, 4, 5, 27, 27
 ); 
-print(mi_tuple5.count(27)); 
+print(mi_tuple5.count(27))
 
 # Método index: Indica la posición en la que se encuentra el valor pasado por parámetro dentro del tuple
 # También se pueden utilizar con las listas y con los diccionarios
 mi_tuple6 = (
     'Hola', 'me', 'llamo', 'Javier'
 )
-print(mi_tuple6.index('Javier'));
+print(mi_tuple6.index('Javier'))
