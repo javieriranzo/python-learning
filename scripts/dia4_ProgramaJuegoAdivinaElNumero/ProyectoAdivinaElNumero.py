@@ -1,8 +1,5 @@
 from random import randint
 
-
-
-
 respuesta_jugador = 0
 intentos = 0
 numero_aleatorio = randint(1, 100)
