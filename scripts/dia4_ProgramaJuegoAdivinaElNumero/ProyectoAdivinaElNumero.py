@@ -1,16 +1,20 @@
 from random import randint
 
-print("### BIENVENIDO A ADIVINA UN NUMERO ###")
-nombre_jugador = input("Introduce tu nombre: ")
-print(f"Hola {nombre_jugador}, tienes que adivinar el número aleatorio entre 1 - 100 en 8 intentos")
+
+
+
 respuesta_jugador = 0
 intentos = 0
 numero_aleatorio = randint(1, 100)
+nombre_jugador = input("Introduce tu nombre: ")
+
+print(f"Hola {nombre_jugador}, tienes que adivinar el número aleatorio entre 1 - 100 en 8 intentos")
+print("### BIENVENIDO A ADIVINA UN NUMERO ###")
 
 while(intentos < 8): 
     respuesta_jugador = int(input("Introduce el número: "))
     intentos += 1
-    if (respuesta_jugador < 1 or respuesta_jugador > 100):
+    if (respuesta_jugador not in range(1,101)):
         print(f"El número {respuesta_jugador} está fuera de los rangos")
     elif(respuesta_jugador > numero_aleatorio):
         print(f"{respuesta_jugador} es mayor que el numero buscado")
