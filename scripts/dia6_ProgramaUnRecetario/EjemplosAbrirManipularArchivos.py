@@ -1,5 +1,5 @@
 # Abrir archivo
-mi_archivo = open('resources/dia6_ProgramaUnRecetario/Prueba.txt')
+mi_archivo = open('resources/dia6_ProgramaUnRecetario\Prueba.txt')
 # Mostrar archivo. No imprime el contenido. Muestra información sobre el archivo
 print(mi_archivo)
 # Leer el archivo. No muestra el archivo
