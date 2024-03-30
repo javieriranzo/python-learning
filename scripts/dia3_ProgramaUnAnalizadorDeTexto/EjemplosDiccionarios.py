@@ -3,12 +3,12 @@ mi_diccionario = {
     'clave1':'valor1', 
     'clave2':'valor2'
 }
-print(type(mi_diccionario));
-print(mi_diccionario);
+print(type(mi_diccionario))
+print(mi_diccionario)
 
 # Consultar elementos del diccionario
-resultado = mi_diccionario['clave1'];
-print(resultado);
+resultado = mi_diccionario['clave1']
+print(resultado)
 
 mi_cliente = {
     'nombre':'Javier',
@@ -16,8 +16,8 @@ mi_cliente = {
     'altura': 1.80,
     'edad': 31
 }
-consulta = mi_cliente['apellido'];
-print(consulta);
+consulta = mi_cliente['apellido']
+print(consulta)
 
 mi_diccionario2 = {
     'clave1': 55,
@@ -28,27 +28,27 @@ mi_diccionario2 = {
         's3': 300
     }
 }
-print(mi_diccionario2['clave1']);
-print(mi_diccionario2['clave2'][1]);
-print(mi_diccionario2['clave3']['s3']);
+print(mi_diccionario2['clave1'])
+print(mi_diccionario2['clave2'][1])
+print(mi_diccionario2['clave3']['s3'])
 
 mi_diccionario3 = {
     'c1':['a', 'b', 'c'],
     'c2':['d', 'e', 'f']
 }
-print(mi_diccionario3['c2'][1].upper());
+print(mi_diccionario3['c2'][1].upper())
 
 # Agregar elementos a un diccionario
 mi_diccionario4 = {
     1: 'a', 
     2: 'b'
 }
-mi_diccionario4[3] = 'c';
-print(mi_diccionario4);
+mi_diccionario4[3] = 'c'
+print(mi_diccionario4)
 
 # Sobreescribir elementos de un diccionario
-mi_diccionario4[2] = 'B'; 
-print(mi_diccionario4);
+mi_diccionario4[2] = 'B' 
+print(mi_diccionario4)
 
 # Conocer todas las claves de un diccionario
 print(mi_diccionario4.keys())
@@ -57,4 +57,4 @@ print(mi_diccionario4.keys())
 print(mi_diccionario4.values())
 
 # Conocer todos los elementos de un diccionario
-print(mi_diccionario4.items);
+print(mi_diccionario4.items)

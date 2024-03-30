@@ -25,8 +25,8 @@ print(mi_set3)
 mi_set4 = set([
     'Hola', 'me', 'llamo', 'Javier'
 ])
-print(type(mi_set4));
-print(len(mi_set4));
+print(type(mi_set4))
+print(len(mi_set4))
 
 # Comprobar si existe un elemento dentro de un set. Se puede hacer con listas también y con diccionarios se puede hacer si se buscan las claves
 mi_set5 = set([

@@ -11,7 +11,7 @@ mi_lista_letras = ['a', 'b', 'c', 'd']
 mayor_numeros = max(mi_lista_numeros)
 menor_numeros = min(mi_lista_numeros)
 mayor_letras = max(mi_lista_letras)
-menor_letras = min(mi_lista_letras);
+menor_letras = min(mi_lista_letras)
 print(f"El mayor de los números es: {mayor_numeros}")
 print(f"El menor de los números es: {menor_numeros}")
 print(f"La mayor de las letras es: {mayor_letras}")

@@ -21,7 +21,7 @@ else:
     print("Mascota desconocida")
 
 edad = 16
-calificacion = 9;
+calificacion = 9
 if edad < 18:
     print("Eres menor de edad")
     if calificacion >= 5:

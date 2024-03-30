@@ -36,7 +36,7 @@ def mostrar_tablero(palabra):
     print(' '.join(lista_oculta))
         
 def comprobar_si_esta_letra(letra_elegida, palabra_oculta, intentos, coincidencias): 
-    juego_acabado = False; 
+    juego_acabado = False
     if letra_elegida in palabra_oculta and letra_elegida not in letras_correctas: 
         letras_correctas.append(letra_elegida)
         coincidencias += 1

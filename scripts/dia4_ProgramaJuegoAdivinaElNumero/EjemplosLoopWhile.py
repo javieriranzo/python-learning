@@ -13,6 +13,6 @@ nombre = input('Introduce tu nombre: ')
 for letra in nombre:
     while letra != 'r':
         print(letra)
-        break;
+        break
         
     
