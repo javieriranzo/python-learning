@@ -118,7 +118,11 @@ while not finalizar_programa:
         mi_categoria = elegir_categoria(mis_categorias)
         mis_recetas = mostrar_recetas(mi_categoria)
         mi_receta = elegir_receta(mis_recetas)
-        leer_receta(mi_receta)
+        if len(mis_recetas) < 1:
+            print("No hay recetas en esta categoría.")
+        else:
+            mi_receta = elegir_receta(mis_recetas)
+            leer_receta(mi_receta)
         volver_inicio()
     elif menu == 2: 
         mis_categorias = mostrar_categorias_recetas(ruta_recetas)
