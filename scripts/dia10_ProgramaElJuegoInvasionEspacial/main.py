@@ -2,11 +2,18 @@ import pygame
 import random
 import math
 
+from pygame import mixer
+
 # Inicializar Pygame
 pygame.init()
 
 # Crear y establecer tamaño de pantalla. Se inidica en píxeles dentro de una tupla
 screen = pygame.display.set_mode((800, 600))
+
+# Añadir música de fondo
+mixer.music.load('resources/dia10_ProgramaElJuegoInvasionEspacial/MusicaFondo.mp3')
+mixer.music.set_volume(0.3)
+mixer.music.play(-1)
 
 # Personalizar pantalla. Cambiar título de la pantalla
 pygame.display.set_caption('Invasión espacial')
@@ -68,6 +75,14 @@ def disparar_bala(posicion_x, posicion_y):
     
 # Puntuje:
 puntaje = 0
+fuente = pygame.font.Font('freesansbold.ttf', 32) # Se indica la fuente y el tamaño que vienen incluídas en pygame
+posicion_puntaje_x = 10 
+posicion_puntaje_y = 10 
+
+# Funcion para mostrar puntaje
+def mostrar_puntaje(x, y): 
+    texto = fuente.render(f'Puntos: {puntaje}', True, (255, 255, 255)) # Imprimir por pantalla el texto del puntaje
+    screen.blit(texto, (posicion_puntaje_x, posicion_puntaje_y))
     
 # Detectar colisiones
 def existe_colision(x1, y1, x2, y2): 
@@ -76,6 +91,12 @@ def existe_colision(x1, y1, x2, y2):
         return True
     else: 
         return False
+
+# Texto final del juego
+fuente_final = pygame.font.Font('freesansbold.ttf', 40) 
+def texto_final(): 
+    texto = fuente_final.render('GAME OVERE', True, (255, 255, 255))
+    screen.blit(texto, (60, 200)) # Posición al centro de la pantalla
 
 # Loop del juego
 # Eventos: Cualquier acción con la pantalla 
@@ -86,6 +107,7 @@ while ejecucion:
     screen.blit(fondo, ((0, 0)))   
     # Evento quit: cerrar la ventana
     for event in pygame.event.get():
+        
         if event.type == pygame.QUIT:
             ejecucion = False
         
@@ -95,6 +117,7 @@ while ejecucion:
         # posicion_jugador_y -= 0.1
         # Controlar movimiento por la pantalla. Programar evento en el que el jugador presiona una letra
         # KEYDOWN: Verifica si la tecla ha sido presionada
+        
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_LEFT:
                 print('El jugador mueve hacia la izquierda ... ')
@@ -104,9 +127,13 @@ while ejecucion:
                 posicion_cambio_jugador_x = 0.3
             if event.key == pygame.K_SPACE:
                 if visibilidad_bala == False: 
+                    # Reproducir el sonido del disparo
+                    sonido_bala = mixer.Sound('resources/dia10_ProgramaElJuegoInvasionEspacial/bala.png')
+                    sonido_bala.play()
                     print('El jugador dispara ... ')
                     posicion_bala_x = posicion_jugador_x
                     disparar_bala(posicion_bala_x, posicion_bala_y)
+                    
         # KEYUP: Verifica si la tecla ha sido soltada
         if event.type == pygame.KEYUP:
             if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
@@ -124,6 +151,11 @@ while ejecucion:
         
     # Actualizar la posicion del enemigo
     for e in range(cantidad_enemigos):
+        if posicion_enemigo_y[e] > 500: 
+            for k in range(cantidad_enemigos):
+                posicion_enemigo_y[k] = 1000
+            texto_final()
+            break 
         posicion_enemigo_x[e] += posicion_cambio_enemigo_x[e]
         # Movimiento enemigo. Limitar pantalla
         if posicion_enemigo_x[e] <= 0:
@@ -135,10 +167,11 @@ while ejecucion:
         # Colision
         colision = existe_colision(posicion_enemigo_x[e], posicion_enemigo_y[e], posicion_bala_x, posicion_bala_y)
         if colision: 
+            sonido_colision = mixer.Sound('resources/dia10_ProgramaElJuegoInvasionEspacial/Golpe.mp3')
+            sonido_colision.play()
             posicion_bala_y = 500
             visibilidad_bala = False
             puntaje += 1
-            print(f'Puntos: {puntaje}')
             posicion_enemigo_x[e] = random.randint(0, 736)
             posicion_enemigo_y[e] = random.randint(50, 200)
         
@@ -153,7 +186,10 @@ while ejecucion:
         posicion_bala_y -= posicion_cambio_bala_y
 
     posicionar_jugador_pantalla(posicion_jugador_x, posicion_jugador_y)
-        
+    
+    # Mostrar puntaje en la pantalla
+    mostrar_puntaje(posicion_puntaje_x, posicion_puntaje_y)
+    
     # Actualizar pantalla
     pygame.display.update()
             
