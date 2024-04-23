@@ -14,54 +14,47 @@ aplicacion.title('Sistema de facturación')
 # Establecer color de fondo de pantalla
 aplicacion.config(bg='burlywood')
 
-## PANEL SUPERIOR DE LA PANTALLA ## 
+## PANELES PRINCIPALES ## 
+
+# Creación del paner superior. Situar panel en la parte superior de la pantalla. Definir y situar la etiqueta del título
 panel_superior = Frame(aplicacion, bd=1, relief=FLAT)
-# Situar el panel superior en la parte superior de la pantalla
 panel_superior.pack(side=TOP)
-# Etiqueta titulo
 etiqueta_titulo = Label(panel_superior, text='Sistema de facturación', fg='black', font=('Dosis', '58'), bg='burlywood', width=27)
-# Situar etiqueta titulo en el panel superior
 etiqueta_titulo.grid(row=0, column=0)
 
-## PANEL IZQUIERDO ##
+# Creación del panel izquierdo. Situar el panel izquiero en la pantalla
 panel_izquierdo = Frame(aplicacion, bd=1, relief=FLAT)
-# Situar el panel izquierdo en la parte izquierda de la pantalla
 panel_izquierdo.pack(side=LEFT)
 
-## PANEL COSTOS ##
+# Creación del panel costos. Situar el panel costos dentro del panel izquierdo
 panel_costos = Frame(panel_izquierdo, bd=1, relief=FLAT)
-# Situar el panel costos en el fondo del panel izquierdo
 panel_costos.pack(side=BOTTOM)
 
-## PANEL COMIDAS ##
+# Creación del panel comidas. Situar el panel comidas dentro del panel izquierdo a la parte derecha
 panel_comidas = LabelFrame(panel_izquierdo, text='Comidas:', font=('Dosis', '19', 'bold'), bd=1, relief=FLAT, fg='black')
-# Situar el panel comidas en la parte izquierda del panel izquierdo
 panel_comidas.pack(side=LEFT)
 
-## PANEL BEBIDAS ##
+# Creación del panel bebidas. Situar el panel bebidas dentro del panel izquierdo a la parte derecha
 panel_bebidas = LabelFrame(panel_izquierdo, text='Bebidas:', font=('Dosis', '19', 'bold'), bd=1, relief=FLAT, fg='black')
-# Situar el panel bebidas en la parte izquierda del panel izquierdo (a la izquierda del panel comidas)
 panel_bebidas.pack(side=LEFT)
 
-## PANEL POSTRES ##
+# Creación del panel postres. Situar el panel postres dentro del panel izquierdo a la parte derecha
 panel_postres = LabelFrame(panel_izquierdo, text='Postres:', font=('Dosis', '19', 'bold'), bd=1, relief=FLAT, fg='black')
-# Situar el panel bebidas en la parte izquierda del panel izquierdo (a la izquierda del panel bebidas)
 panel_postres.pack(side=LEFT)
 
-## PANEL DERECHO ## 
+# Creación del paner derecho. Situar panel en la parte derecha de la pantalla.
 panel_derecha = Frame(aplicacion, bd=1, relief=FLAT)
-# Situar el panel derecho en la parte derecha de la pantalla
 panel_derecha.pack(side=RIGHT)
 
-## PANEL CALCULADORA ##
+# Creación del panel calculadora. Situar panel calculadora dentro del panel derecho
 panel_calculadora = Frame(panel_derecha, bd=1, relief=FLAT, bg='burlywood')
 panel_calculadora.pack()
 
-## PANEL RECIBO ##
+# Creación del panel recibo. Situar panel calculadora dentro del panel derecho
 panel_recibo = Frame(panel_derecha, bd=1, relief=FLAT, bg='burlywood')
 panel_recibo.pack()
 
-## PANEL BOTONES ##
+# Creación del panel botones. Situar panel calculadora dentro del panel derecho
 panel_botones = Frame(panel_derecha, bd=1, relief=FLAT, bg='burlywood')
 panel_botones.pack()
 
