@@ -391,7 +391,5 @@ botones_guardados[11].config(command=lambda : click_boton('*'))
 botones_guardados[14].config(command=lambda : click_boton('0'))
 botones_guardados[15].config(command=lambda : click_boton('/'))
 
-
-
 # Evitar que la pantalla se cierre
 aplicacion.mainloop()
