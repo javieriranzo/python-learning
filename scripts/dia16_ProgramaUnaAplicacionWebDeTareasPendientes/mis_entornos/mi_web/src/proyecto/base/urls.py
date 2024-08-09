@@ -1,6 +1,7 @@
 from django.urls import path
-from ._import views
+from . views import ListaPendientes, DetalleTarea
 
 urlpatterns = [
-    path('', views.listaPendientes, name='pendientes')
+    path('', ListaPendientes.as_view(), name='pendientes'),
+    path('tarea/<int:pk>', DetalleTarea.as_view(), name='tarea')
 ]

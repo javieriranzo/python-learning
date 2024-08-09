@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-(g@)5f%(onrz83%8kj_dbxjt2g%uqc+s^e!zq(u+e^ryr0#gd0'
+SECRET_KEY = 'django-insecure-gvr(#jc*fx)q(3&(hkn115gc0y#1r3!=mcg#qt-&)mpcdlol)7'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -55,7 +55,9 @@ ROOT_URLCONF = 'proyecto.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            '//home//jiranzo//Repositorios//Personales//python-learning//scripts//dia16_ProgramaUnaAplicacionWebDeTareasPendientes//mis_entornos//mi_web//src//proyecto//base//templates'
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
