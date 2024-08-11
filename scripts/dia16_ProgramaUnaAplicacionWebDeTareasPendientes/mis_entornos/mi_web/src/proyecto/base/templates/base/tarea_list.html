@@ -1,12 +1,17 @@
 <h1>Lista de pendientes</h1>
-
+<a href="{% url 'crear_tarea' %}">Crear nueva tarea</a>
 <table>
     <tr>
         <th>Elementos</th>
+        <th></th>
+        <th></th>
     </tr>
-    {% for tarea in object_list %}
+    {% for tarea in lista_tareas %}
     <tr>
         <td>{{tarea.titulo}}</td>
+        <td><a href="{% url 'detalle_tarea' tarea.id %}">Ver</a></td>
+        <td><a href="{% url 'editar_tarea' tarea.id %}">Editar</a></td>
+        <td><a href="{% url 'eliminar_tarea' tarea.id %}">Eliminar</a></td>
     </tr>
     {% empty %}
     <h3>No hay elementos en esta lista</h3>
