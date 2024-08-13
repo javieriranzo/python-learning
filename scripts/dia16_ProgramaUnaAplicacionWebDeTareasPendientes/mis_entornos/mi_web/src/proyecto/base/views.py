@@ -54,6 +54,12 @@ class ListaPendientes(LoginRequiredMixin, ListView): # Se añade LoginRequiredMi
         context['lista_tareas'] = context['lista_tareas'].filter(usuario = self.request.user)
         # Para ver solo las tareas no completas
         context['count'] = context['lista_tareas'].filter(completo = False)
+
+        # Mostrar tareas buscadas en la caja de texto
+        valor_buscado = self.request.GET.get('area_buscar') or ''
+        if valor_buscado: 
+            context['lista_tareas'] = context['lista_tareas'].filter(titulo__icontains=valor_buscado)
+        context['valor_buscado'] = valor_buscado
         return context
 
 class DetalleTarea(LoginRequiredMixin, DetailView): # Se añade LoginRequiredMixin para que un usuario sin registrar pueda acceder a la funcion
